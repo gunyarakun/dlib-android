@@ -77,9 +77,12 @@ def download_file(url, desc=None):
     return filename
 
 
-def downloadPrebuiltOpencv(prefix='.', out_prefix='.', version='3.1.0'):
-    OPENCV_PREBUILT_URL = 'http://netix.dl.sourceforge.net/project/opencvlibrary/opencv-android/{0}/OpenCV-{0}-android-sdk.zip'.format(
-        version)
+# NOTE: 3.4.9 has IplImage changes so we use 3.4.8 instead
+def downloadPrebuiltOpencv(prefix='.', out_prefix='.', version='3.4.8'):
+    OPENCV_PREBUILT_URL = 'https://jaist.dl.sourceforge.net/project/opencvlibrary/{0}/opencv-{0}-android-sdk.zip'.format(version)
+    # Old version of 3.4.x
+    # OPENCV_PREBUILT_URL = 'https://jaist.dl.sourceforge.net/project/opencvlibrary/opencv-android/{0}/opencv-{0}-android-sdk.zip'.format(version)
+
     OPENCV_ARCHIVE = 'OpenCV-{0}-android-sdk.zip'.format(version)
     OPENCV_UNZIP_DIR = 'OpenCV-android-sdk'
     OPENCV_OUT_PATH = 'opencv'
